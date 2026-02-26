@@ -1,6 +1,5 @@
 const API_URL = "/api/tasks";
 
-// 🔐 Redirect if not logged in
 const token = localStorage.getItem("token");
 if (!token) {
   window.location.href = "login.html";
