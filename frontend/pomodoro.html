@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Focus Mode</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Focus Mode ⏱</h1>
+
+    <!-- Clean Navbar (Recommended) -->
+    <nav class="navbar">
+      <a href="index.html" class="nav-link">Dashboard</a>
+      <a href="habits.html" class="nav-link">Habits</a>
+      <a href="pomodoro.html" class="nav-link active">Focus Mode</a>
+      <a href="stats.html" class="nav-link">Stats</a>
+      <a href="weekly.html" class="nav-link">Weekly</a>
+      <button onclick="logout()" class="logout-btn">Logout</button>
+    </nav>
+  </header>
+
+  <section class="pomodoro-container">
+    <div class="timer-card">
+
+      <!-- 🍅 Daily Stats -->
+      <p id="todayCount">🍅 Today's Sessions: 0</p>
+
+      <h2 id="modeLabel">Focus Time</h2>
+      <div class="timer-display" id="timer">25:00</div>
+
+      <div class="timer-controls">
+        <button id="startBtn">Start</button>
+        <button id="pauseBtn">Pause</button>
+        <button id="resetBtn">Reset</button>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="pomodoro.js"></script>
+</body>
+</html>

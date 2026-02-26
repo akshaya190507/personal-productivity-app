@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weekly Planner</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Weekly Planner 📅</h1>
+
+    <nav class="navbar">
+      <a href="index.html" class="nav-link">Dashboard</a>
+      <a href="habits.html" class="nav-link">Habits</a>
+      <a href="pomodoro.html" class="nav-link">Focus</a>
+      <a href="stats.html" class="nav-link">Stats</a>
+      <a href="weekly.html" class="nav-link active">Weekly</a>
+      <button onclick="logout()" class="logout-btn">Logout</button>
+    </nav>
+  </header>
+
+  <section class="weekly-planner">
+    <div class="weekly-grid">
+
+      <div class="day-column" data-day="1">
+        <h3>Monday</h3>
+        <div class="day-tasks">
+          <p class="empty">No tasks 🌱</p>
+        </div>
+      </div>
+
+      <div class="day-column" data-day="2">
+        <h3>Tuesday</h3>
+        <div class="day-tasks">
+          <p class="empty">No tasks 🌱</p>
+        </div>
+      </div>
+
+      <div class="day-column" data-day="3">
+        <h3>Wednesday</h3>
+        <div class="day-tasks">
+          <p class="empty">No tasks 🌱</p>
+        </div>
+      </div>
+
+      <div class="day-column" data-day="4">
+        <h3>Thursday</h3>
+        <div class="day-tasks">
+          <p class="empty">No tasks 🌱</p>
+        </div>
+      </div>
+
+      <div class="day-column" data-day="5">
+        <h3>Friday</h3>
+        <div class="day-tasks">
+          <p class="empty">No tasks 🌱</p>
+        </div>
+      </div>
+
+      <div class="day-column" data-day="6">
+        <h3>Saturday</h3>
+        <div class="day-tasks">
+          <p class="empty">No tasks 🌱</p>
+        </div>
+      </div>
+
+      <div class="day-column" data-day="0">
+        <h3>Sunday</h3>
+        <div class="day-tasks">
+          <p class="empty">No tasks 🌱</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="weekly.js"></script>
+</body>
+</html>

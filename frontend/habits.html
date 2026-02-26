@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Habit Tracker</title>
+  <link rel="stylesheet" href="styles.css" />
+  
+</head>
+<body>
+
+  <!-- 🌸 Header -->
+  <header>
+    <h1>Habit Tracker</h1>
+    <p>Build consistency. Stay disciplined.</p>
+  </header>
+
+  <nav class="navbar">
+      <a href="index.html" class="nav-link">Dashboard</a>
+      <a href="habits.html" class="nav-link active">Habits</a>
+      <a href="pomodoro.html" class="nav-link">Focus Mode</a>
+      <a href="stats.html" class="nav-link">Stats</a>
+      <a href="weekly.html" class="nav-link">Weekly</a>
+      <button onclick="logout()" class="logout-btn">Logout</button>
+    </nav>
+
+  <!-- 🔙 Back Button -->
+  <div style="text-align:center; margin:20px;">
+    <a href="index.html">
+      <button class="nav-btn">← Back to Dashboard</button>
+    </a>
+  </div>
+
+  <!-- 🌿 Add Habit Section -->
+  <section class="habit-section">
+    <h2>Add New Habit</h2>
+
+    <div class="habit-form">
+      <input type="text" id="habitName" placeholder="Habit name (e.g., Meditation)" />
+
+      <select id="habitFrequency">
+        <option value="daily">Daily</option>
+        <option value="weekly">Weekly</option>
+      </select>
+
+      <button id="addHabitBtn">Add Habit</button>
+    </div>
+
+    <div id="habitList" class="habit-list"></div>
+  </section>
+
+  <script src="habits.js"></script>
+</body>
+</html>
