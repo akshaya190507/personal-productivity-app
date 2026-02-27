@@ -174,7 +174,12 @@ async function updateStatus(taskId, newStatus) {
       body: JSON.stringify({ status: newStatus })
     });
 
-    if (!res.ok) throw new Error("Failed to update task");
+    const data = await res.json();
+
+    if (!res.ok) {
+      console.error(data);
+      return; 
+    }
 
     await loadTasks();
     loadStats();
@@ -182,7 +187,6 @@ async function updateStatus(taskId, newStatus) {
 
   } catch (error) {
     console.error("Error updating task:", error);
-    alert("Could not update task.");
   }
 }
 
