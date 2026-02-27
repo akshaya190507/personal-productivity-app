@@ -161,6 +161,32 @@ async function deleteTask(taskId) {
 }
 
 /* =========================
+   UPDATE TASK STATUS
+========================= */
+async function updateStatus(taskId, newStatus) {
+  try {
+    const res = await fetch(`${API_URL}/${taskId}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${token}`
+      },
+      body: JSON.stringify({ status: newStatus })
+    });
+
+    if (!res.ok) throw new Error("Failed to update task");
+
+    await loadTasks();
+    loadStats();
+    loadWeeklyTasks && loadWeeklyTasks();
+
+  } catch (error) {
+    console.error("Error updating task:", error);
+    alert("Could not update task.");
+  }
+}
+
+/* =========================
    LOAD STATS
 ========================= */
 async function loadStats() {

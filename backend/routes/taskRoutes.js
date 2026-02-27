@@ -14,13 +14,12 @@ const {
 
 const authMiddleware = require("../middleware/authMiddleware");
 
-router.get("/stats", authMiddleware, getTaskStats);;//must come before :id
+router.get("/stats", authMiddleware, getTaskStats);
+router.get("/weekly", authMiddleware, getWeeklyTasks);
 router.post("/", authMiddleware, createTask);
 router.get("/", authMiddleware, getAllTasks);
 router.put("/:id", authMiddleware, updateTask);
 router.delete("/:id", authMiddleware, deleteTask);
-router.get("/stats", authMiddleware, getTaskStats);
-router.get("/weekly", authMiddleware, getWeeklyTasks);
-router.get("/:id", getTaskById);
+router.get("/:id", authMiddleware, getTaskById);
 
 module.exports = router;

@@ -78,26 +78,23 @@ exports.getTaskById = async (req, res, next) => {
 /* =========================
    UPDATE TASK
 ========================= */
-exports.updateTask = async (req, res, next) => {
+exports.updateTask = async (req, res) => {
   try {
-    const task = await Task.findOneAndUpdate(
-      { _id: req.params.id, user: req.user.id },
+    const task = await Task.findByIdAndUpdate(
+      req.params.id,
       req.body,
-      { new: true, runValidators: true }
+      { new: true }
     );
 
     if (!task) {
-      res.status(404);
-      throw new Error("Task not found");
+      return res.status(404).json({ message: "Task not found" });
     }
 
-    res.status(200).json(task);
-
-  } catch (error) {
-    next(error);
+    res.json(task);
+  } catch (err) {
+    res.status(500).json({ message: "Update failed" });
   }
 };
-
 
 /* =========================
    DELETE TASK
